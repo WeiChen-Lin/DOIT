@@ -1,0 +1,385 @@
+html{
+    font-family: 'Courier New', Courier, monospace;
+    height:100%;
+    font-size: 16px;
+}
+body{
+    margin:0px;
+    padding:0px;
+    height:100%;
+    display: flex;
+}
+.title{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:30vh;
+}
+.title>img{
+    width:35%;
+    margin-bottom: 15px;
+}
+.title>#marker_text{
+    text-align: center;
+    font-size:1rem;
+    font-weight: bold;
+    width:70%;
+}
+.signbox{
+    width:50%;
+    height:100%;
+    background-color: gainsboro;
+}
+body > div.signbox > div.signUp{
+    margin-top:15vh;
+    display: block;
+}
+body > div.signbox > div.signUp > form > div.email{
+    height:32px;
+    line-height: 32px;
+    font-size:1.5rem;
+    font-weight: bold;
+}
+body > div.signbox > div.signUp > form {
+    display: flex;
+    margin:auto;
+    flex-direction: column;
+    width:40%;
+}
+body > div.signbox > div.signUp > form >p{
+    width: 100%;
+    text-align: left;
+    font-weight: 1000;
+    font-size: 1.5rem;
+}
+body > div.signbox > div.signUp > form > div.input_box{
+    margin-top:20px;
+}
+body > div.signbox > div.signUp > form > div.input_box > label{
+    font-size:1.2rem;
+    line-height: 1.2rem;
+}
+body > div.signbox > div.signUp > form > div.input_box > input{
+    height:35px;
+    border-radius: 10px;
+    border: 1px rgb(87, 87, 90) solid;
+    margin-top:10px;
+    width: 80%;
+    font-size: 1.2rem;
+    padding: 5px; 
+}  
+body > div.signbox > div.signUp > form > div.input_box > input:focus{
+    outline:none;
+    border: 1px rgb(134, 134, 233) solid;
+}
+body > div.signbox > div.signUp > form > div.signbut{
+    height:50px;
+    border-radius: 10px;
+    background-color:rgb(108, 110, 109);
+    margin-top:40px;
+    width: 80%;
+    font-size: 1.2rem;
+    padding: 5px; 
+}
+body > div.signbox > div.signUp > form > div.signbut > button{
+    height:100%;
+    border:none;
+    background-color:transparent;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 5px; 
+}
+body > div.signbox > div.signUp > form > div.signbut > button:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+body > div.signbox > div.signUp > div.signAPI{
+    width:30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left:28.3%;
+}
+body > div.signbox > div.signUp > div.signAPI > div > img{
+    height: 32px;
+}
+body > div.signbox > div.signUp > div.signAPI > div > img:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+body > div.signbox > div.signUp > div.Tosignup{
+    width:30%;
+    margin-left:30%;
+    margin-top:25px;
+}
+body > div.signbox > div.signUp > div.Tosignup > span{
+    color:rgb(83, 83, 241)
+}
+body > div.signbox > div.signUp > div.Tosignup > span:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+@media (min-width:900px) and (max-width:1500px){
+    .title{
+        margin-top:35vh;
+    }
+    .title>#marker_text{
+        font-size: 0.95rem;
+        width:70%;
+    }
+    body > div.signbox > div.signIn > form > div.input_box > input{
+        height: 25px;
+        width: 100%;
+        font-size: 1rem;
+        padding: 3px; 
+    }
+    body > div.signbox > div.signIn > form > div.signbut{
+        height:25px;
+        width: 100%;
+        font-size: 1rem;
+    }
+    body > div.signbox > div.signIn > form > div.signbut > button{
+        font-size: 1rem;
+    }
+    body > div.signbox > div.signIn > div.signAPI{
+        width:48%;
+        margin-left:30%;
+        justify-content: space-between;
+    }
+    body > div.signbox > div.signIn > div.Tosignup{
+        width:45%;
+        margin-left:30%;
+    }
+    body > div.signbox > div.signUp > form > div.input_box > input{
+        height: 25px;
+        width: 100%;
+        font-size: 1rem;
+        padding: 3px; 
+    }
+    body > div.signbox > div.signUp > form > div.signbut{
+        height:25px;
+        width: 100%;
+        font-size: 1rem;
+    }
+    body > div.signbox > div.signUp > form > div.signbut > button{
+        font-size: 1rem;
+    }
+    body > div.signbox > div.signUp > div.signAPI{
+        width:48%;
+        margin-left:30%;
+        justify-content: space-between;
+    }
+    body > div.signbox > div.signUp > div.Tosignup{
+        width:45%;
+        margin-left:30%;
+    }
+}
+@media (min-width:500px) and (max-width:899px){
+    .title{
+        margin-top:35vh;
+    }
+    .title>img{
+        width:50%;
+        margin-bottom: 15px;
+    }
+    .title>#marker_text{
+        font-size: 0.5rem;
+        width:90%;
+    }
+    body > div.signbox > div.signIn > form {
+        width:70%;
+    }
+    body > div.signbox > div.signIn > form >p{
+        font-size: 1.2rem;
+    }
+    body > div.signbox > div.signIn > form > div.input_box > label{
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+    body > div.signbox > div.signIn > form > div.input_box{
+        margin-top:10px;
+    }
+    body > div.signbox > div.signIn > form > div.input_box > input{
+        height: 25px;
+        width: 100%;
+        font-size: 1rem;
+        padding: 3px;
+        margin-top:5px;
+    }
+    body > div.signbox > div.signIn > form > div.signbut{
+        height: 25px;
+        margin-top:20px;
+        width: 100%;
+        font-size: 1rem;
+        padding: 5px; 
+    }
+    body > div.signbox > div.signIn > form > div.signbut > button{
+        font-size: 1rem;
+    }
+    body > div.signbox > div.signIn > div.signAPI{
+        width:80%;
+        font-size: 0.8rem;
+        margin:auto;
+    }
+    body > div.signbox > div.signIn > div.Tosignup{
+        width:70%;
+        font-size: 0.8rem;
+        margin:auto;
+    }
+    body > div.signbox > div.signUp > form {
+        width:70%;
+    }
+    body > div.signbox > div.signUp > form >p{
+        font-size: 1.2rem;
+    }
+    body > div.signbox > div.signUp > form > div.input_box > label{
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+    body > div.signbox > div.signUp > form > div.input_box{
+        margin-top:10px;
+    }
+    body > div.signbox > div.signUp > form > div.input_box > input{
+        height: 25px;
+        width: 100%;
+        font-size: 1rem;
+        padding: 3px;
+        margin-top:5px;
+    }
+    body > div.signbox > div.signUp > form > div.signbut{
+        height: 25px;
+        margin-top:20px;
+        width: 100%;
+        font-size: 1rem;
+        padding: 5px; 
+    }
+    body > div.signbox > div.signUp > form > div.signbut > button{
+        font-size: 1rem;
+    }
+    body > div.signbox > div.signUp > div.signAPI{
+        width:80%;
+        font-size: 0.8rem;
+        margin:auto;
+    }
+    body > div.signbox > div.signUp > div.Tosignup{
+        width:70%;
+        font-size: 0.8rem;
+        margin:auto;
+    }
+}
+@media (max-width:499px){
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    .title{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin:10px auto;
+    }
+    .title>img{
+        width:35%;
+        margin-bottom: 15px;
+    }
+    .title>#marker_text{
+        text-align: center;
+        width: 90%;
+        font-size: 0.8rem;
+    }
+    .signbox{
+        width:100%;
+    }
+    .signbox{
+        width:100%;
+        background-color: gainsboro;
+    }
+    body > div.signbox > div.signIn{
+        margin-top:5vh;
+    }
+    body > div.signbox > div.signIn > form {
+        width:80%;
+    }
+    body > div.signbox > div.signIn > form >p{
+        font-size: 1.2rem;
+    }
+    body > div.signbox > div.signIn > form > div.input_box{
+        margin-top:20px;
+    }
+    body > div.signbox > div.signIn > form > div.input_box > label{
+        font-size:1rem;
+        line-height: 1rem;
+    }
+    body > div.signbox > div.signIn > form > div.input_box > input{
+        height:25px;
+        width: 95%;
+        font-size: 1.1rem;
+    }
+    body > div.signbox > div.signIn > form > div.signbut{
+        height:30px;
+        margin-top:30px;
+        width: 96%;
+        font-size: 1.1rem;
+    }
+    body > div.signbox > div.signIn > form > div.signbut > button{
+        font-size: 1.1rem;
+    }
+    body > div.signbox > div.signIn > div.signAPI{
+        width: 65%;
+        margin:auto;
+        justify-content: space-between;
+    }
+    body > div.signbox > div.signIn > div.signAPI > div > img{
+        height: 32px;
+    }
+    body > div.signbox > div.signIn > div.Tosignup{
+        width:65%;
+        margin:auto;
+        margin-top:25px;
+    }
+    body > div.signbox > div.signUp{
+        margin-top:5vh;
+    }
+    body > div.signbox > div.signUp > form {
+        width:80%;
+    }
+    body > div.signbox > div.signUp > form >p{
+        font-size: 1.2rem;
+    }
+    body > div.signbox > div.signUp > form > div.input_box{
+        margin-top:20px;
+    }
+    body > div.signbox > div.signUp > form > div.input_box > label{
+        font-size:1rem;
+        line-height: 1rem;
+    }
+    body > div.signbox > div.signUp > form > div.input_box > input{
+        height:25px;
+        width: 95%;
+        font-size: 1.1rem;
+    }
+    body > div.signbox > div.signUp > form > div.signbut{
+        height:30px;
+        margin-top:30px;
+        width: 96%;
+        font-size: 1.1rem;
+    }
+    body > div.signbox > div.signUp > form > div.signbut > button{
+        font-size: 1.1rem;
+    }
+    body > div.signbox > div.signUp > div.signAPI{
+        width: 65%;
+        margin:auto;
+        justify-content: space-between;
+    }
+    body > div.signbox > div.signUp > div.signAPI > div > img{
+        height: 32px;
+    }
+    body > div.signbox > div.signUp > div.Tosignup{
+        width:65%;
+        margin:auto;
+        margin-top:25px;
+    }
+}

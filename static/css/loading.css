@@ -1,0 +1,28 @@
+.loading{
+    position: relative;
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index:12;
+}
+.loading > div.loadingBG{
+    background-color: rgb(214, 214, 214);
+    z-index:10;
+    height: 100%;
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0.7;
+}
+.loading > div.loader{
+    z-index:10;
+    width: 48px;
+    height:48px;
+    margin-left:auto;
+    margin-right:auto; 
+}
+.loading > div.loader > img {
+    height:100%;
+    width: 100%;
+}

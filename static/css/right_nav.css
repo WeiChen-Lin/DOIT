@@ -1,0 +1,76 @@
+.notification{
+    width:20%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    position:fixed;
+    top:0;
+    right:0;
+    background-color: rgb(233, 233, 233);
+}
+.notification > div.top_nav{
+    width:100%;
+    height: 5%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size:1.5rem;
+}
+.notification > div.top_nav > div.not_text{
+    font-weight: bold;
+    line-height: 48px;
+    width:50%;
+    border-right: 3px solid black;
+    background-color: rgb(233, 233, 233);
+}
+.notification > div.top_nav > div.signout{
+    font-weight: bold;
+    width:50%;
+    height:100%;
+    line-height: 48px;
+    background-color: rgb(161, 160, 160);
+}
+.notification > div.top_nav > div.signout:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+.notification > div.not_site{
+    background-color: rgb(233, 233, 233);
+    height:90%;
+    width:100%;
+    margin:auto;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+.notification > div.not_site > div.not{
+    width:90%;
+    padding:5px;
+    font-size: 1.5rem;
+    word-wrap: break-word;
+    text-align: left;
+    margin: 10px auto 0px auto;
+    opacity: 1;
+    transition: all 1s 0s;
+}
+.notification > div.not_site > div.not:hover{
+    background-color: rgb(192, 192, 192);
+}
+.notification > div.not_site > div.not > div.not_time{
+    font-style:oblique;
+    color: rgb(90, 88, 88);
+    height:20px;
+    line-height: 20px;
+    font-size:1rem;
+    padding: 5px 0px;
+}
+.notification > div.right{
+    width:100%;
+    height: 5%;
+    text-align: center;
+    font-size:0.8rem;
+    font-weight: bold;
+    line-height: 48px;
+}
