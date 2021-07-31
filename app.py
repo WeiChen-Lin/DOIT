@@ -11,7 +11,7 @@ from s3DataStorage import uploadFile
 #引入環境參數配置
 from dotenv import dotenv_values
 #Socket
-from flask_socketio import SocketIO, emit, join_room
+#from flask_socketio import SocketIO, emit, join_room
 
 
 config = dotenv_values(".env")
