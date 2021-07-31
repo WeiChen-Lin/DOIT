@@ -38,11 +38,11 @@ function statusChangeCallback(response){
                     data.userEmail = response.email;
                     data.loginRoute = 0;
                     let data_to_python = JSON.stringify(data);
-                    let requestUrl = "http://52.76.36.230:3000/api/sign"
+                    let requestUrl = "https://doitouob.com/api/sign"
                     let request = new XMLHttpRequest();
                     request.onload = function(){
                         if(request.status == 200){
-                            window.location.href = "http://52.76.36.230:3000/home"
+                            window.location.href = "https://doitouob.com/home"
                         }
                     }
                     request.open("POST", requestUrl, true);
@@ -60,11 +60,11 @@ function statusChangeCallback(response){
             data.userEmail = response.email;
             data.loginRoute = 0;
             let data_to_python = JSON.stringify(data);
-            let requestUrl = "http://52.76.36.230:3000/api/sign"
+            let requestUrl = "https://doitouob.com/api/sign"
             let request = new XMLHttpRequest();
             request.onload = function(){
                 if(request.status == 200){
-                    window.location.href = "http://52.76.36.230:3000/home";
+                    window.location.href = "https://doitouob.com/home";
                 }
             }
             request.open("PATCH", requestUrl, true);
@@ -82,11 +82,11 @@ function statusChangeCallback(response){
                     data.userEmail = response.email;
                     data.loginRoute = 0;
                     let data_to_python = JSON.stringify(data);
-                    let requestUrl = "http://52.76.36.230:3000/api/sign"
+                    let requestUrl = "https://doitouob.com/api/sign"
                     let request = new XMLHttpRequest();
                     request.onload = function(){
                         if(request.status == 200){
-                            window.location.href = "http://52.76.36.230:3000/home";
+                            window.location.href = "https://doitouob.com/home";
                         }
                     }
                     request.open("POST", requestUrl, true);
@@ -100,11 +100,11 @@ function statusChangeCallback(response){
 
 /* 初瀏覽就拿cookie與後端API溝通用 */
 function signInauto(){
-    let requestUrl = "http://52.76.36.230:3000/api/sign";
+    let requestUrl = "https://doitouob.com/api/sign";
     let request = new XMLHttpRequest();
     request.onload = function(){
         if(request.status == 200){
-            window.location.href = "http://52.76.36.230:3000/home"
+            window.location.href = "https://doitouob.com/home"
         }
     }
     request.open("GET", requestUrl, true);

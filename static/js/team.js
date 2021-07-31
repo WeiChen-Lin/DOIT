@@ -33,7 +33,7 @@ window.addEventListener('keydown', function (event) {
 
 /* 初次進入抓取 teamName 和把teamID綁到變數上 */
 function TeamGetInfor(){
-    let requestURL = "http://52.76.36.230:3000/api/team";
+    let requestURL = "https://doitouob.com/api/team";
     let data = {}
     data.teamID = teamID;
     let data_to_python = JSON.stringify(data);
@@ -51,7 +51,7 @@ function TeamGetInfor(){
             json.teaminfo.working.forEach(ele => drawTeamBlock(ele.teamName, working_site, 1, ele.teamID, ele.teamName, json.workinfo.workoutline, json.workinfo.worker));
         } else {
             alert("please login first");
-            window.location.href = "http://52.76.36.230:3000";
+            window.location.href = "https://doitouob.com";
         }
     }
     request.open("POST", requestURL, true);
@@ -204,7 +204,7 @@ function clickGetLeadTeam(that, id){
     that.classList.add("select");
     clearLeadPage();
     loaderIcon(leading_page, 120);
-    let requestURL = "http://52.76.36.230:3000/api/team";
+    let requestURL = "https://doitouob.com/api/team";
     let data = {}
     data.type = 0;
     data.teamID = id;
@@ -220,7 +220,7 @@ function clickGetLeadTeam(that, id){
             closeIcon(leading_page);
         } else {
             alert("please login first");
-            window.location.href = "http://52.76.36.230:3000";
+            window.location.href = "https://doitouob.com";
         }
     }
     request.open("PATCH", requestURL, true);
@@ -241,7 +241,7 @@ function clickGetWorkingTeam(that, id, userID){
     that.classList.add("select");
     clearWorkPage();
     loaderIcon(working_page, 120);
-    let requestURL = "http://52.76.36.230:3000/api/team";
+    let requestURL = "https://doitouob.com/api/team";
     let data = {}
     data.type = 1;
     data.userID = userID;
@@ -255,7 +255,7 @@ function clickGetWorkingTeam(that, id, userID){
             closeIcon(working_page);
         } else {
             alert("please login first");
-            window.location.href = "http://52.76.36.230:3000";
+            window.location.href = "https://doitouob.com";
         }
     }
     request.open("PATCH", requestURL, true);
@@ -278,7 +278,7 @@ function InviteMember(){
     load_site.textContent="";
     loaderIcon(load_site, 24);
     let data_to_python = JSON.stringify(data);
-    let requestURL = "http://52.76.36.230:3000/api/mail";
+    let requestURL = "https://doitouob.com/api/mail";
     let request = new XMLHttpRequest();
     request.onload = function(){
         let OKimg = document.querySelector("#tick_mail");
@@ -308,7 +308,7 @@ function getSelectUser(inputstatus){
     data.workStatus = status;
     data.type = 0;
     let data_to_python = JSON.stringify(data);
-    let requestURL = "http://52.76.36.230:3000/api/work"
+    let requestURL = "https://doitouob.com/api/work"
     let request = new XMLHttpRequest();
     request.onload = function(){
         if(request.status == 200){
@@ -346,7 +346,7 @@ function SendWorktoAPI(){
     let load_site = document.querySelector("#leading > div.assignWorkPage > div.assignWork > button");
     load_site.textContent = "";
     loaderIcon(load_site, 36);
-    let requestURL = "http://52.76.36.230:3000/api/work"
+    let requestURL = "https://doitouob.com/api/work"
     let request = new XMLHttpRequest();
     request.onload = function(){
         if (request.status == 200){
@@ -409,7 +409,7 @@ function filterwork(status){
     data.workStatus = status;
     data.type = 1;
     let data_to_python = JSON.stringify(data);
-    let requestURL = "http://52.76.36.230:3000/api/work"
+    let requestURL = "https://doitouob.com/api/work"
     let request = new XMLHttpRequest();
     request.onload = function(){
         if(request.status == 200){

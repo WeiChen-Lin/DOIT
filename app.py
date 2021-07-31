@@ -457,7 +457,7 @@ def mailsend():
 
             token  = jwt.encode({"userEmail": email, "teamID": teamID, "status":0}, config["jwt_secret_key"])
 
-        url = "https://localhost:3000/api/mail?token="+ token
+        url = "https://doitouob.com/api/mail?token="+ token
         msg_title = 'Sincerely invite you to join the team'
         msg_sender = ("Do it!", "DoitSender2021@gmail.com")
         msg_recipients = []
@@ -709,23 +709,4 @@ def notification():
         return response
 
 
-# channel = redisObject.Getpubsub()
-# msg_room_lst = []
-# @socketio.on("subtoRedis")
-# def get_not_channel(userID):
-    #join room 有沒有啟動
-    # join_room(userID)
-    # if userID not in msg_room_lst:
-    #     channel.subscribe(userID)
-    
-    # for msg in channel.listen():
-    #     if isinstance(msg.get('data'), bytes):
-    #         msg = json.loads(msg['data'])
-    #         emit('getNewNot', msg)
-        
-
-
-
-app.run(host="localhost", port=3000, debug=True)  
-
-# socketio.run(app, host="localhost", port=3000)
+app.run(host="0.0.0.0", port=3000, debug=True)  
