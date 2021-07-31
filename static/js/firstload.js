@@ -1,12 +1,12 @@
 /* 初瀏覽就拿cookie與後端API溝通用 */
 function signInauto(){
-    let requestUrl = "http://52.76.36.230:3000/api/sign";
+    let requestUrl = "https://doitouob.com/api/sign";
     let request = new XMLHttpRequest();
     request.onload = function(){
         if(request.status == 200){
-            window.location.href = "http://52.76.36.230:3000/home"
+            window.location.href = "https://doitouob.com/home"
         } else {
-            window.location.href = "http://52.76.36.230:3000"
+            window.location.href = "https://doitouob.com"
         }
     }
     request.open("GET", requestUrl, true);
@@ -16,11 +16,11 @@ function signInauto(){
 
 /* 登出用 */ 
 function signOut(){
-    let requestURL = "http://52.76.36.230:3000/api/sign";
+    let requestURL = "https://doitouob.com/api/sign";
     let request = new XMLHttpRequest();
     request.onload = function(){
         if (request.status == 200){
-            window.location.href = "http://52.76.36.230:3000";
+            window.location.href = "https://doitouob.com";
         };
     };
     request.open("DELETE" , requestURL , true);
