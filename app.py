@@ -148,7 +148,7 @@ def sign():
         
         else: 
 
-            response = make_response( jsonify({"ok":"token is invalid"}) , 200)
+            response = make_response( jsonify({"ok":"token is invalid"}) , 500)
 
             response.set_cookie(key="token", value="", expires=0)
 
