@@ -93,13 +93,13 @@ function postToAPI(){
     let data = getform(document.querySelector("body > div.signbox > div.signUp > form"));
     data.loginRoute = 1;
     let data_to_python = JSON.stringify(data);
-    let requestUrl = "https://doitouob.com/api/sign"
+    let requestUrl = domain_name + "/api/sign"
     let request = new XMLHttpRequest();
     signUpbut.textContent = "";
     loaderIcon(signUpbut, 48);
     request.onload = function(){
         if(request.status == 200){
-            window.location.href = "https://doitouob.com/home"
+            window.location.href = domain_name + "/home"
         } else {
             /* 清除錯誤訊息 */
             clearSignError();
@@ -168,14 +168,14 @@ function DoitSignIn(){
     let data = getform(document.querySelector("body > div.signbox > div.signIn > form"));
     data.loginRoute = 1;
     let data_to_python = JSON.stringify(data);
-    let requestUrl = "https://doitouob.com/api/sign"
+    let requestUrl = domain_name + "/api/sign"
     let request = new XMLHttpRequest();
     let load_site = document.querySelector("body > div.signbox > div.signIn > form > div.signbut > button");
     load_site.textContent = "";
     loaderIcon(load_site, 48);
     request.onload = function(){
         if(request.status == 200){
-            window.location.href = "https://doitouob.com/home"
+            window.location.href = domain_name + "/home"
         } else {
             load_site.textContent = "Log In"
             closeIcon(load_site);

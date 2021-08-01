@@ -34,7 +34,7 @@ TeamPage();
 
 /* 初次瀏覽以ajax拿資料(個人資料、團隊資料) */
 function getInfor(){
-    let requestURL = "https://doitouob.com/api/home";
+    let requestURL = domain_name + "/api/home";
     let request = new XMLHttpRequest();
     homeLoading();
     request.onload = function(){
@@ -59,7 +59,7 @@ function getInfor(){
             homeFinishLoading();
         } else {
             alert("please login first");
-            window.location.href = "https://doitouob.com";
+            window.location.href = domain_name;
         }
     }
     request.open("GET" , requestURL , true);
@@ -94,7 +94,7 @@ const createTeambut = document.querySelector("#addTeamPage > div.addTeam > div >
 const teamInput_site = document.querySelector("#addTeamPage > div.addTeam > div > input[type=text]");
 createTeambut.addEventListener("click", createTeam);
 function createTeam(){
-    let requestURL = "https://doitouob.com/api/home";
+    let requestURL = domain_name + "/api/home";
     let data = {};
     data.userID = userID;
     data.teamName = teamInput_site.value;
@@ -114,7 +114,7 @@ function createTeam(){
             closeJump();
         } else {
             alert("please login first");
-            window.location.href = "https://doitouob.com";
+            window.location.href = domain_name + "";
         }
     }
     request.open("PATCH", requestURL, true);
@@ -127,7 +127,7 @@ function drawTeam(name, member, site, teamID){
     let team = document.createElement("div");
     team.className = "team";
     team.addEventListener("click", ()=>{
-        window.open("https://doitouob.com/team/" + teamID)
+        window.open(domain_name + "/team/" + teamID)
     })
 
     let teamName = document.createElement("div");

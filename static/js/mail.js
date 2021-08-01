@@ -46,11 +46,11 @@ function postToAPI(){
     data.userEmail = document.querySelector("body > div.signbox > div > form > div.email").textContent;
     data.teamID = teamID;
     let data_to_python = JSON.stringify(data);
-    let requestUrl = "https://doitouob.com/api/mail"
+    let requestUrl = domain_name + "/api/mail"
     let request = new XMLHttpRequest();
     request.onload = function(){
         if(request.status == 200){
-            window.location.href = "https://doitouob.com/home"
+            window.location.href = domain_name + "/home"
         } else {
             let json = JSON.parse(request.responseText);
             console.log(json);
