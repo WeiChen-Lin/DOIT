@@ -478,7 +478,9 @@ def mailsend():
 
             token  = jwt.encode({"userEmail": email, "teamID": teamID, "status":0}, config["jwt_secret_key"])
 
-        url = "https://doitouob.com/api/mail?token="+ token
+            token_on_url = json.loads(token)
+ 
+        url = "https://doitouob.com/api/mail?token="+ token_on_url
         msg_title = 'Sincerely invite you to join the team'
         msg_sender = ("Do it!", "DoitSender2021@gmail.com")
         msg_recipients = []
