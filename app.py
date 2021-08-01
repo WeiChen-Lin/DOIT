@@ -42,7 +42,7 @@ s3Object = uploadFile(s3Config)
 app=Flask(__name__)
 app.config.update(
     MAIL_SERVER='smtp.gmail.com',
-    MAIL_PROT=587,
+    MAIL_PORT=587,
     MAIL_USE_TLS=True,
     MAIL_USERNAME=config["mail_sender"],
     MAIL_PASSWORD=config["mail_password"]
@@ -477,9 +477,9 @@ def mailsend():
         else:
 
             token  = jwt.encode({"userEmail": email, "teamID": teamID, "status":0}, config["jwt_secret_key"])
-
+        
  
-        url = "https://doitouob.com/api/mail?token="+ str(token)
+        url = "https://doitouob.com/api/mail?token="+ token.decode("utf-8")
         msg_title = 'Sincerely invite you to join the team'
         msg_sender = ("Do it!", "DoitSender2021@gmail.com")
         msg_recipients = []
