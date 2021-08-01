@@ -1,30 +1,32 @@
 /* FB登入api串接 */
-window.fbAsyncInit = function() {
-    FB.init({
-        appId      : '969310010551786',
-        cookie     : true,
-        xfbml      : true,
-        version    : 'v11.0'
-});   
-    FB.AppEvents.logPageView();   
-};
-
-(function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "http://connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-let FBbut = document.getElementsByClassName("fb");
-for(let i = 0; i < FBbut.length; i++){
-    FBbut[i].addEventListener("click", ()=>{
+function init(){
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '969310010551786',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v11.0'
+    });   
+        FB.AppEvents.logPageView();   
+    };
+    
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "http://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    
+    let FBbut = document.getElementsByClassName("fb")[0];
+    FBbut.addEventListener("click", ()=>{
         FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
         }); 
     })
 }
+
+init();
 
 function statusChangeCallback(response){
     //這位用戶已登入 Facebook，但尚未登入您的網頁。
