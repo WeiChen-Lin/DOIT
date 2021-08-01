@@ -267,6 +267,7 @@ body{
 .Workspace > div.workcontainer > div.work > div.deriviation{
     width:65%;
     line-height: 36px;
+    height: 36px;
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -274,10 +275,11 @@ body{
     width:15%;
     display: flex;
     justify-content: center;
+    height: 36px;
 }
 .Workspace > div.workcontainer > div.work > div.worker > div.workerImg{
-    height:32px;
-    width:32px;
+    height:36px;
+    width:36px;
     overflow: hidden;
     border-radius: 200px;
 }
@@ -286,15 +288,16 @@ body{
     width:100%;
 }
 .Workspace > div.workcontainer > div.work > div.worker > div.workerName{
-    height:32px;
-    line-height: 32px;
-    font-size: 1.2rem;
-    padding-left: 10px;
+    height:36px;
+    line-height: 36px;
+    font-size: 1rem;
+    padding-left: 5px;
+    font-weight: bold;
 }
 .Workspace > div.workcontainer > div.work > div.date{
     width:15%;
-    height:32;
-    line-height: 32px;
+    height:36;
+    line-height: 36px;
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
