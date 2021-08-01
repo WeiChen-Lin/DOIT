@@ -447,6 +447,8 @@ def mailsend():
             
             teamID = data["teamID"]
 
+            userEmail = data["userEmail"]
+
             if data["status"] == 0:
 
                 return render_template("forgetPwd.html", teamID = teamID, userEmail = userEmail)
