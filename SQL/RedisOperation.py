@@ -47,6 +47,14 @@ class ReOper:
 
         return return_data
 
+    def DeleteKey(self, key):
+        print(key, type(key))
+        
+        key = str(key)
+
+        self.r.delete(key)
+
+        return True
     #兩個禮拜秒數 1209600
 
     #通知來以hash set 進leading這個field內
@@ -95,7 +103,3 @@ class ReOper:
                 not_list.append(json.loads(self.r.get(data).decode().replace("'", '"')))
 
         return not_list
-
-    def Getpubsub(self):
-
-        return self.r.pubsub()

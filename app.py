@@ -447,8 +447,6 @@ def mailsend():
             
             teamID = data["teamID"]
 
-            userEmail = data["userEmail"]
-
             if data["status"] == 0:
 
                 return render_template("forgetPwd.html", teamID = teamID, userEmail = userEmail)
@@ -682,7 +680,7 @@ def upload():
         
         return response
 
-@app.route("/api/notification", methods=["PATCH", "GET"])
+@app.route("/api/notification", methods=["PATCH", "GET", "DELETE"])
 def notification():
 
     if request.method == "PATCH":
@@ -732,5 +730,12 @@ def notification():
         
         return response
 
+    elif request.method == "DELETE":
 
-app.run(host="0.0.0.0", port=3000, debug=True)  
+        key = request.get_json()["key"]
+
+        if redisObject.DeleteKey(key):
+
+            return "ok" , 200
+
+app.run(host="0.0.0.0", port=3000)  

@@ -8,7 +8,7 @@ function getNotification(){
         if(request.status == 200){
             closeIcon(not_site);
             let json = JSON.parse(request.responseText);
-            json.data.forEach( e => { createLeadingNot(e.type, e.date, e.teamName, e.workTitle, e.workerName)});
+            json.data.forEach( e => { createLeadingNot(e.type, e.date, e.teamName, e.workTitle, e.workerName, userID)});
         }
     }
     request.open("GET", requestURL, true);
@@ -25,10 +25,11 @@ function createSpan(text){
     return span;
 }
 
-function createLeadingNot(type, date, teamName, title, workername){
+function createLeadingNot(type, date, teamName, title, workername, userID){
     let div = document.createElement("div");
     let site = document.querySelector("body > div.notification > div.not_site");
     div.className = "not";
+    div.id = userID + "_not_" + date;
     div.style.opacity = 1;
     div.appendChild(createSpan(workername));
     div.appendChild(document.createTextNode("已在您的團隊『"));
@@ -64,10 +65,43 @@ function createLeadingNot(type, date, teamName, title, workername){
     }
     div.appendChild(time_site);
 
+    let delete_img = document.createElement("img");
+    delete_img.className = "deleteNot";
+    delete_img.src = "../static/css/fig/deleteNot.png";
+    
+    delete_img.addEventListener("click", ()=>{
+        DeleteLeadingNot(userID, date);
+    })
+
+    div.appendChild(delete_img);
+
+    div.addEventListener("mouseenter", ()=>{delete_img.style.opacity = "1";})
+    div.addEventListener("mouseleave", ()=>{delete_img.style.opacity = "0";})
+
+
     let check = document.getElementsByClassName("not");
     if(check){
         site.insertBefore(div, check[0]);
     } else {
         site.appendChild(div);
     }
+}
+
+function DeleteLeadingNot(userID, date){
+    let data = {};
+    data.key = userID +"_not_" + date;
+    let requestURL = domain_name + "/api/notification";
+    let request = new XMLHttpRequest();
+    let remove_not = document.getElementById(data.key);
+    let data_to_python = JSON.stringify(data);
+    loaderIcon(remove_not, 24);
+    request.onload = function(){
+        if(request.status == 200){
+            closeIcon(remove_not);
+            not_site.removeChild(remove_not);
+        }
+    }
+    request.open("DELETE", requestURL, true);
+    request.setRequestHeader('content-type', 'application/json');
+    request.send(data_to_python);
 }
