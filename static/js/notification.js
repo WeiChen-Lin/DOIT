@@ -1,7 +1,7 @@
 const not_site = document.querySelector("body > div.notification > div.not_site");
 
 function getNotification(){
-    let requestURL = "https://doitouob.com/api/notification";
+    let requestURL = domain_name + "/api/notification";
     let request = new XMLHttpRequest();
     loaderIcon(not_site, 120);
     request.onload = function(){

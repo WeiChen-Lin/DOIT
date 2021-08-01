@@ -8,7 +8,7 @@ function view(){
     }
     let data = new FormData();
     data.append(personimgBut.name, file[0]);
-    let requestURL = "https://doitouob.com/api/upload"
+    let requestURL = domain_name + "/api/upload"
     let request = new XMLHttpRequest();
     request.onload = function(){
         if(request.status == 200){

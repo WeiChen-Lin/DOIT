@@ -112,7 +112,7 @@ function drawDetailPage(workerName, workStatus, id, type){
     let data = {}
     data.workID = workID;
     let data_to_python = JSON.stringify(data);
-    let requestURL = "https://doitouob.com/api/detail/" + workID;
+    let requestURL = domain_name + "/api/detail/" + workID;
     let request = new XMLHttpRequest();
     request.onload = function(){
         if(request.status == 200){
@@ -370,7 +370,7 @@ function updateComment(detailID, value, message_site){
     data.comment = value;
     data.type = 0;
     let data_to_python = JSON.stringify(data);
-    let requestURL = "https://doitouob.com/api/detail/" + detailID;
+    let requestURL = domain_name + "/api/detail/" + detailID;
     let request = new XMLHttpRequest();
     request.onload = function(){
         if(request.status == 200){
@@ -392,7 +392,7 @@ function uploadMessage(workID, value, site){
     data.date = Date.now();
     drawWokerMessage(data.date, value)
     let data_to_python = JSON.stringify(data);
-    let requestURL = "https://doitouob.com/api/detail/" + detailID;
+    let requestURL = domain_name + "/api/detail/" + detailID;
     let request = new XMLHttpRequest();
     request.onload = function(){
         if(request.status == 200){
@@ -414,7 +414,7 @@ function ChangeStatus(workID, status, color){
     data.type = 0;
     data.date = Date.now();
     let data_to_python = JSON.stringify(data);
-    let requestURL = "https://doitouob.com/api/notification";
+    let requestURL = domain_name + "/api/notification";
     let request = new XMLHttpRequest();
     request.onload = function(){
         if(request.status == 200){

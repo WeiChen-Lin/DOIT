@@ -42,7 +42,7 @@ s3Object = uploadFile(s3Config)
 app=Flask(__name__)
 app.config.update(
     MAIL_SERVER='smtp.gmail.com',
-    MAIL_PROT=587,
+    MAIL_PORT=587,
     MAIL_USE_TLS=True,
     MAIL_USERNAME=config["mail_sender"],
     MAIL_PASSWORD=config["mail_password"]
@@ -136,14 +136,25 @@ def sign():
             
             return response
         
-
         data = jwt.decode(cookie, config["jwt_secret_key"] , algorithms=['HS256'])
 
-        response = make_response( jsonify({"status":"Login", "userinfo":usersqlobject.getUser(data["email"])}), 200)
+        if usersqlobject.getUser(data["email"]):
+
+            response = make_response( jsonify({"status":"Login", "userinfo":usersqlobject.getUser(data["email"])}), 200)
+            
+            response.headers["Content-Type"] = "application/json"
+            
+            return response
         
-        response.headers["Content-Type"] = "application/json"
-        
-        return response
+        else: 
+
+            response = make_response( jsonify({"ok":"token is invalid"}) , 500)
+
+            response.set_cookie(key="token", value="", expires=0)
+
+            response.headers["Content-Type"] = "application/json"
+            
+            return response
 
     #登入動作 (並加上token)
     elif request.method == "PATCH":
@@ -171,10 +182,20 @@ def sign():
             
             else: 
 
-                response = make_response( jsonify({"error":True}) , 500)
+                usersqlobject.tableInsertFBUser(data["userName"], data["userEmail"], data["loginRoute"], data["userID"])
+
+                userinfo = usersqlobject.getUser(data["userEmail"])
                 
+                expire = datetime.datetime.utcnow() + datetime.timedelta(days=3)
+
+                response = make_response( jsonify({"ok":True}) , 200)
+
+                token  = jwt.encode( {"userID": userinfo["id"], "email": userinfo["email"], "exp": expire} , config["jwt_secret_key"])
+                        
+                response.set_cookie(key="token" , value=token , expires=expire)
+
                 response.headers["Content-Type"] = "application/json"
-                
+                        
                 return response
 
         #本身Do it! 平台登入
@@ -456,8 +477,9 @@ def mailsend():
         else:
 
             token  = jwt.encode({"userEmail": email, "teamID": teamID, "status":0}, config["jwt_secret_key"])
-
-        url = "https://doitouob.com/api/mail?token="+ token
+        
+ 
+        url = "https://doitouob.com/api/mail?token="+ token.decode("utf-8")
         msg_title = 'Sincerely invite you to join the team'
         msg_sender = ("Do it!", "DoitSender2021@gmail.com")
         msg_recipients = []

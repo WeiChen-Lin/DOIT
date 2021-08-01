@@ -36,11 +36,11 @@ function statusChangeCallback(response){
                     data.userEmail = response.email;
                     data.loginRoute = 0;
                     let data_to_python = JSON.stringify(data);
-                    let requestUrl = "https://doitouob.com/api/sign"
+                    let requestUrl = domain_name + "/api/sign"
                     let request = new XMLHttpRequest();
                     request.onload = function(){
                         if(request.status == 200){
-                            window.location.href = "https://doitouob.com/home"
+                            window.location.href = domain_name + "/home"
                         }
                     }
                     request.open("POST", requestUrl, true);
@@ -58,11 +58,11 @@ function statusChangeCallback(response){
             data.userEmail = response.email;
             data.loginRoute = 0;
             let data_to_python = JSON.stringify(data);
-            let requestUrl = "https://doitouob.com/api/sign"
+            let requestUrl = domain_name + "/api/sign"
             let request = new XMLHttpRequest();
             request.onload = function(){
                 if(request.status == 200){
-                    window.location.href = "https://doitouob.com/home";
+                    window.location.href = domain_name + "/home";
                 }
             }
             request.open("PATCH", requestUrl, true);
@@ -80,11 +80,30 @@ function statusChangeCallback(response){
                     data.userEmail = response.email;
                     data.loginRoute = 0;
                     let data_to_python = JSON.stringify(data);
-                    let requestUrl = "https://doitouob.com/api/sign"
+                    let requestUrl = domain_name + "/api/sign"
                     let request = new XMLHttpRequest();
                     request.onload = function(){
                         if(request.status == 200){
-                            window.location.href = "https://doitouob.com/home";
+                            window.location.href = domain_name + "/home";
+                        }
+                    }
+                    request.open("PATCH", requestUrl, true);
+                    request.setRequestHeader('content-type', 'application/json');
+                    request.send(data_to_python);
+                })
+            } else if (response.status === "not_authorized"){
+                FB.api("/me?fields=id,name,email", function(response){
+                    let data = {};
+                    data.userID = response.id;
+                    data.userName = response.name;
+                    data.userEmail = response.email;
+                    data.loginRoute = 0;
+                    let data_to_python = JSON.stringify(data);
+                    let requestUrl = domain_name + "/api/sign"
+                    let request = new XMLHttpRequest();
+                    request.onload = function(){
+                        if(request.status == 200){
+                            window.location.href = domain_name + "/home";
                         }
                     }
                     request.open("POST", requestUrl, true);
@@ -98,11 +117,11 @@ function statusChangeCallback(response){
 
 /* 初瀏覽就拿cookie與後端API溝通用 */
 function signInauto(){
-    let requestUrl = "https://doitouob.com/api/sign";
+    let requestUrl = domain_name + "/api/sign";
     let request = new XMLHttpRequest();
     request.onload = function(){
         if(request.status == 200){
-            window.location.href = "https://doitouob.com/home"
+            window.location.href = domain_name + "/home"
         }
     }
     request.open("GET", requestUrl, true);
