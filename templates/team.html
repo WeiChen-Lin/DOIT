@@ -16,7 +16,7 @@
 </script>
 <body onload="TeamGetInfor();"> 
     <div class="title">
-        <img src="{{ url_for('static', filename='css/fig/Do it.png') }}">
+        <img src="{{ url_for('static', filename='css/fig/Do it.png') }}" class="DoitIcon">
         <div class="leading">
             <div class="teamclassifier">-Leading Team-</div>
         </div>
@@ -127,8 +127,8 @@
             </div>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='js/notification.js') }}"></script>
     <script src="{{ url_for('static', filename='js/team.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/notification.js') }}"></script>
     <script src="{{ url_for('static', filename='js/assign.js') }}"></script>
     <script src="{{ url_for('static', filename='js/detail.js') }}"></script>
     <script src="{{ url_for('static', filename='js/firstload.js') }}"></script>

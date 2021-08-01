@@ -3,7 +3,8 @@ let workerID;
 // 預設 status = 4 為篩選出全部工作
 let status = 4;
 
-
+const homePage = document.getElementsByClassName("DoitIcon");
+homePage[0].addEventListener("click", ()=>{window.location.href = domain_name + "/home"});
 /*
 控制詳細畫面的出現與否
  -> 此為控制 detail 畫面出現與否
@@ -49,6 +50,7 @@ function TeamGetInfor(){
             let working_site = document.querySelector("body > div.title > div.working");
             json.teaminfo.leading.forEach(ele => drawTeamBlock(ele.teamName, leading_site, 0, ele.teamID, ele.teamName, json.workinfo.workoutline, json.workinfo.worker));
             json.teaminfo.working.forEach(ele => drawTeamBlock(ele.teamName, working_site, 1, ele.teamID, ele.teamName, json.workinfo.workoutline, json.workinfo.worker));
+            getNotification();
         } else {
             alert("please login first");
             window.location.href = domain_name + "";

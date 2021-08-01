@@ -26,6 +26,10 @@ body{
     margin-top:25px;
     margin-bottom:45px;  
 }
+.title > img:hover{
+    cursor: pointer;
+    opacity: 0.85; 
+}
 .title > div.leading, .title > div.working{
     width:70%;
 }
@@ -276,8 +280,8 @@ body{
     justify-content: center;
 }
 .Workspace > div.workcontainer > div.work > div.worker > div.workerImg{
-    height:32px;
-    width:32px;
+    height:36px;
+    width:36px;
     overflow: hidden;
     border-radius: 200px;
 }
@@ -286,15 +290,16 @@ body{
     width:100%;
 }
 .Workspace > div.workcontainer > div.work > div.worker > div.workerName{
-    height:32px;
-    line-height: 32px;
-    font-size: 1.2rem;
+    height:36px;
+    line-height: 36px;
+    font-size: 1rem;
+    font-weight: bold;
     padding-left: 10px;
 }
 .Workspace > div.workcontainer > div.work > div.date{
     width:15%;
-    height:32;
-    line-height: 32px;
+    height:36;
+    line-height: 36px;
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
