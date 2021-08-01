@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loading.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='css/fig/cookie.ico') }}" type="image/x-icon"/>
+    <title>Do it!</title>
+</head>
+<body onload="signInauto();">
+    <script src="{{ url_for('static', filename='js/firstload.js') }}"></script>
+    <div class="title">
+        <img src="{{ url_for('static', filename='css/fig/Do it.png') }}">
+        <div id="marker_text">We Work, We Live, We Learn, We Play</div>
+    </div>
+    <div class="signbox">
+        <div class="signIn">
+            <form action="">
+                <p>Sign In</p>
+                <div class="input_box">
+                    <label for="email">Email</label><br>
+                    <input type="text" name="userEmail">
+                </div>
+                <div class="input_box">
+                    <label for="password">Password</label><br>
+                    <input type="password" name="userPwd">
+                </div>
+                <div class=signbut>
+                    <button type="button">LOG IN
+                    </button>
+                    <div class="loading">
+                        <div class="loadingBg"></div>
+                        <div class="loader">
+                            <img src="{{ url_for('static', filename='css/fig/ball_loading.gif') }}">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <hr style="color:rgb(97, 96, 96);width:50%;margin-top: 25px;">
+            <div class="signAPI">
+                <div>使用其他服務登入</div>
+                <div class="fb"><img src="{{ url_for('static', filename='css/fig/facebook.png') }}" alt=""></div>
+                <div><img src="{{ url_for('static', filename='css/fig/google.png') }}" alt=""></div>
+            </div>
+            <hr style="color:rgb(97, 96, 96);width:50%;margin-top: 7px;">
+            <div class="Tosignup">還沒有帳號嗎，<span id="Tosignup">點此註冊</span></div>
+        </div>
+        <div class="signUp">
+            <form>
+                <p>Sign Up</p>
+                <div class="input_box">
+                    <label for="email">Email</label><br>
+                    <input type="text" name="userEmail">
+                </div>
+                <div class="input_box">
+                    <label for="Username">Username</label><br>
+                    <input type="text" name="userName">
+                </div>
+                <div class="input_box">
+                    <label for="password">Password</label><br>
+                    <input type="password" name="userPwd">
+                </div>
+                <div class=signbut>
+                    <button type="button">Sign Up</button>
+                </div>
+            </form>
+            <hr style="color:rgb(97, 96, 96);width:50%;margin-top: 25px;">
+            <div class="signAPI">
+                <div>使用其他服務登入</div>
+                <div class="fb"><img src="{{ url_for('static', filename='css/fig/facebook.png') }}" alt=""></div>
+                <div><img src="{{ url_for('static', filename='css/fig/google.png') }}" alt=""></div>
+            </div>
+            <hr style="color:rgb(97, 96, 96);width:50%;margin-top: 7px;">
+            <div class="Tosignup">已有帳號，<span id="Tosignup">返回登入</span></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/load.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sign.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forgetPwd.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='css/fig/cookie.ico') }}" type="image/x-icon"/>
+    <title>Do it!</title>
+</head>
+<body>
+    <script>
+        let teamID = {{teamID}};
+    </script>
+    <div class="title">
+        <img src="{{ url_for('static', filename='css/fig/Do it.png') }}">
+        <div id="marker_text">We Work, We Live, We Learn, We Play</div>
+    </div>
+    <div class="signbox">
+        <div class="signUp">
+            <form>
+                <p>Thank you for join us!</p>
+                <div class="email">{{userEmail}}</div>
+                <div class="input_box">
+                    <label for="Username">Username</label><br>
+                    <input type="text" name="userName">
+                </div>
+                <div class="input_box">
+                    <label for="password">Password</label><br>
+                    <input type="password" name="userPwd">
+                </div>
+                <div class=signbut>
+                    <button type="button">Sign Up</button>
+                </div>
+            </form>
+            <hr style="color:rgb(97, 96, 96);width:50%;margin-top: 25px;">
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/mail.js') }}"></script>
+</body>
+</html>

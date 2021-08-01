@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/right_nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/team.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loading.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='css/fig/cookie.ico') }}" type="image/x-icon"/>
+    <title>My Team</title>
+</head>
+<script>
+    let teamID = {{teamID}};
+</script>
+<body onload="TeamGetInfor();"> 
+    <div class="title">
+        <img src="{{ url_for('static', filename='css/fig/Do it.png') }}">
+        <div class="leading">
+            <div class="teamclassifier">-Leading Team-</div>
+        </div>
+        <div class="working">
+            <div class="teamclassifier">-Working Team-</div>
+        </div>
+    </div>
+    <div class="Workspace" id="leading">
+        <div class="addWorkerPage">
+            <div class="background_layer"></div>
+            <div class="addWorker">
+                <p>Invite a worker</p>
+                <div class="teamInput">
+                    <input type="text" placeholder="Email address......">
+                    <button type="button">Invite</button>
+                    <img id="tick_mail" src="{{ url_for('static', filename='css/fig/tick.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="assignWorkPage">
+            <div class="background_layer"></div>
+            <div class="assignWork">
+                <p>Assign Work</p>
+                <div class="assignSelect">
+                    <select id="assignSelect">
+                    </select>
+                </div>
+                <textarea id="outline" cols="70" rows="1" placeholder="Work outline..."></textarea>
+                <textarea id="detail" cols="70" rows="1" placeholder="Work detail description..."></textarea>
+                <button type="button">Assign</button>
+            </div>
+        </div>
+        <div class="spaceTitle">
+            <div class="space_img"><img src="{{ url_for('static', filename='css/fig/home.png') }}"></div>
+            <div class="space_text"></div>
+        </div>
+        <div class="filter">
+            <div class="progress">
+                <div class="progressTitle">Search box</div>
+                <div class="all" id="filterbut">All</div>
+                <div class="finish" id="filterbut">Finish</div>
+                <div class="working" id="filterbut">Working</div>
+                <div class="pending" id="filterbut">Pending</div>
+            </div>
+            <div class="selectworker">
+                <select>
+                    <option id="select_worker" value="">Select a worker</option>
+                </select>
+            </div>
+            <div class="invite">
+                <button type="button" id="invite">Invite</button>
+                <button type="button" id="assign">Assign Work</button>
+            </div>
+        </div>
+        <div class="workcontainer">
+        </div>
+    </div>
+    <div class="Workspace" id="working">
+        <div class="spaceTitle">
+            <div class="space_img"><img src="{{ url_for('static', filename='css/fig/home.png') }}"></div>
+            <div class="space_text">Team Name</div>
+        </div>
+        <div class="filter">
+            <div class="progress">
+                <div class="progressTitle">Search box</div>
+                <div class="all" id="filterbut">All</div>
+                <div class="finish" id="filterbut">Finish</div>
+                <div class="working" id="filterbut">Working</div>
+                <div class="pending" id="filterbut">Pending</div>
+            </div>
+        </div>
+        <div class="workcontainer">
+        </div>
+    </div>
+    <div class="notification">
+        <div class="top_nav">
+            <div class="not_text">Notification</div>
+            <div class="signout" id="signout">Sign Out</div>
+        </div>
+        <div class="not_site">
+        </div>
+        <div class="right">Copyright© by WeiChen Lin. All rights reserved</div>
+    </div>
+    <div class="workdetail">
+        <div class="background_layer"></div>
+        <div class="detail">
+            <div class="detail_title">
+                <div class="detail_worker_name">WCL</div>
+                <div class="detail_work">f</div>
+            </div>
+            <div class="message">
+                <textarea name="" id="message_area" cols="90" rows="1" placeholder="Leave a message...."></textarea>
+            </div>
+            <div class="update_list">
+
+            </div>
+            <div class="forManager">
+                <div class="submitfile">
+                    <img src="{{ url_for('static', filename='css/fig/ppt.png') }}">
+                </div>
+                <div class="manageraction">
+                    <button class="detail_but" id="but_keppworking">Keep Working</button>
+                    <button class="detail_but" id="but_leave">Leave</button>
+                    <button class="detail_but" id="but_welldone">Done!</button>
+                    <button class="detail_but" id="but_delete">Delete</button>
+                    <button class="detail_but" id="but_check">Submit</button>   
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/notification.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/team.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/assign.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/detail.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/firstload.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/load.js') }}"></script>
+</body>
+</html>

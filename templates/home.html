@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/right_nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loading.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='css/fig/cookie.ico') }}" type="image/x-icon"/>
+    <title>Home</title>
+</head>
+<body onload="getInfor();">
+    <div class="title">
+        <img src="{{ url_for('static', filename='css/fig/Do it.png') }}">
+        <div class="menu" id="menu">
+            <div class="menu_img"><img src="{{ url_for('static', filename='css/fig/home.png') }}"></div>
+            <div class="menu_text">My Team</div>
+        </div>
+        <div class="menu" id="menu">
+            <div class="menu_img"><img src="{{ url_for('static', filename='css/fig/person.png') }}"></div>
+            <div class="menu_text">Personal Setting</div>
+        </div>
+    </div>
+    <div class="Workspace">
+        <div class="spaceTitle">
+            <div class="space_img"><img src="{{ url_for('static', filename='css/fig/home.png') }}"></div>
+            <div class="space_text">My Team</div>
+        </div>
+        <div class="Teamblock">
+            <div class="teamcontainer" id="leading">
+                <div class="teamtitle">Leading Team</div>
+                <button type="button" class="teambut" id="addteambut">Add Team</button>
+            </div>
+            <div class="teamcontainer" id="working">
+                <div class="teamtitle">Working Team</div>
+            </div>
+        </div>
+    </div>
+    <div class="setting">
+        <div class="spaceTitle">
+            <div class="space_img"><img src="{{ url_for('static', filename='css/fig/person.png') }}"></div>
+            <div class="space_text">Personal Setting</div>
+        </div>
+        <div class="spaceinfo">
+            <div class="accountinfo">
+                <div class="info">
+                    <div>Email :</div>
+                    <div id="email"></div>
+                </div>
+                <div class="info">
+                    <div>User Name :</div>
+                    <div id="username"></div>
+                </div>
+            </div>
+            <div class="personImg">
+                <div class="uploadimg"><img src="{{ url_for('static', filename='css/fig/person.png') }}"></div>
+                <div class="upload">
+                    <label class="uploadlabel">
+                        <input id="upload_img" style="display:none;" type="file" accept="image/*" name="userImg">
+                        Upload
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="notification">
+        <div class="top_nav">
+            <div class="not_text">Notification</div>
+            <div class="signout" id="signout">Sign Out</div>
+        </div>
+        <div class="not_site">
+        </div>
+        <div class="right">Copyright© by WeiChen Lin. All rights reserved</div>
+    </div>
+    <div class="addTeamPage" id="addTeamPage">
+        <div class="background_layer"></div>
+        <div class="addTeam">
+            <p>Create a team</p>
+            <div class="teamInput">
+                <input type="text" placeholder="Create a team......." maxlength="30">
+                <button type="button">create</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/4.1.1/socket.io.min.js" integrity="sha384-cdrFIqe3RasCMNE0jeFG9xJHog/tgOVC1E9Lzve8LQN1g5WUHo0Kvk1mawWjxX7a" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/notification.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/firstload.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/load.js') }}"></script>
+</body>
+</html>
+
