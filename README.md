@@ -22,3 +22,8 @@
 
 ### 系統架構圖
 
+![系統架構圖](https://user-images.githubusercontent.com/60848391/127816439-e55aa085-b09e-4c95-b8c8-0d23f7569c24.png)
+
+### MySQL架構圖
+
+![mysql架構圖](https://user-images.githubusercontent.com/60848391/127816457-6f3cfc07-5adc-4b17-bb2d-ce118e8fad3b.png)
