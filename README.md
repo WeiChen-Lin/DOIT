@@ -1,4 +1,4 @@
-# [Do-it!](https://doitouob.com)
+# [Do it!](https://doitouob.com)
 
 ### 設計理念
 
@@ -9,3 +9,16 @@
 2. 員工提交進度，老闆沒有查看反而懷疑員工偷雞摸狗
 
 為了解決這個問題而設計出了Do it!這個平台，讓雙方都可以掌握彼此的進度，讓溝通更順利。
+
+### 使用技術
+
+* Python Flask
+* 以RESTful API架構實現
+* 串接FB API實現FB第三方登入
+* SMTP進行email 邀請加入團隊
+* 使用Redis存取通知，確認完成後可以將通知刪除
+* 以S3儲存使用者上傳的大頭貼
+* 申請SSL憑證實踐HTTPS
+
+### 系統架構圖
+
