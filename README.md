@@ -26,7 +26,7 @@
 
 ### MySQL架構圖
 
-![mysql架構圖](https://user-images.githubusercontent.com/60848391/127816457-6f3cfc07-5adc-4b17-bb2d-ce118e8fad3b.png)
+![mysql架構圖2](https://user-images.githubusercontent.com/60848391/127818729-4eacc077-5ca3-4f37-81af-0d44022a916c.png)
 
 ## 功能介紹
 
