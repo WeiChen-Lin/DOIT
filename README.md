@@ -80,10 +80,12 @@ Search Box 及旁邊的下拉式選單可以藉由 __工作狀態__ 及 __工作
 * 2. 此工作之工作細項
 * 3. 工作者留言區，點comment可進行回覆
 * 4. 工作審核區，依據該工作有不同的工作狀態可進行不同的操作
- | 工作狀態  | 可進行之相應操作 |
- | ---- | ----- |   
- | Working  |  Leave(離開細項畫面) |
- | Pending  |  Done(工作完成，轉為Finish狀態) 、 Keep Working(審核未通過，轉為Working狀態) |
- | Finish  |  Delete(將工作刪除) |
+
+| 工作狀態 | 可進行之相應操作 |
+| :----: | :-----: |   
+| Working | Leave(離開細項畫面) |
+| Pending |  Done(工作完成，轉為Finish狀態) 、 Keep Working(審核未通過，轉為Working狀態) |
+| Finish | Delete(將工作刪除) |
+
 
 
