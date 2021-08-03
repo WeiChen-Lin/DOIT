@@ -30,7 +30,7 @@ function statusChangeCallback(response){
         FB.login(function(response){
             console.log(response);
             if(response.status === "connected"){
-                FB.api("/me?fields=id,name,email", function(response){
+                FB.api("/me?fields=id,name,email", {fields: 'name,email'} , function(response){
                     console.log(response);
                     let data = {};
                     data.userID = response.id;
@@ -53,7 +53,7 @@ function statusChangeCallback(response){
         })
     } //這位用戶已登入 Facebook，且已登入您的網頁。
     else if (response.status === "connected"){
-        FB.api("/me?fields=id,name,email", function(response){
+        FB.api("/me?fields=id,name,email", {fields: 'name,email'},  function(response){
             console.log(response);
             let data = {};
             data.userID = response.id;
@@ -77,7 +77,7 @@ function statusChangeCallback(response){
         FB.login(function(response) {
             console.log(response);
             if (response.status === 'connected') {
-                FB.api("/me?fields=id,name,email", function(response){
+                FB.api("/me?fields=id,name,email", {fields: 'name,email'},  function(response){
                     console.log(response);
                     let data = {};
                     data.userID = response.id;
@@ -98,7 +98,7 @@ function statusChangeCallback(response){
                 })
             } else if (response.status === "not_authorized"){
                 console.log(response);
-                FB.api("/me?fields=id,name,email", function(response){
+                FB.api("/me?fields=id,name,email", {fields: 'name,email'},  function(response){
                     console.log(response);
                     let data = {};
                     data.userID = response.id;
