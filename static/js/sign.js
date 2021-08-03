@@ -28,8 +28,10 @@ function statusChangeCallback(response){
     //這位用戶已登入 Facebook，但尚未登入您的網頁。
     if(response.status === "not_authorized"){
         FB.login(function(response){
+            console.log(response);
             if(response.status === "connected"){
                 FB.api("/me?fields=id,name,email", function(response){
+                    console.log(response);
                     let data = {};
                     data.userID = response.id;
                     data.userName = response.name;
@@ -48,10 +50,11 @@ function statusChangeCallback(response){
                     request.send(data_to_python);
                 })
             }
-        })
+        }, {scope: 'public_profile,email'});
     } //這位用戶已登入 Facebook，且已登入您的網頁。
     else if (response.status === "connected"){
-        FB.api("/me?fields=id,name,email", function(response){
+        FB.api("/me?fields=id,name,email", {fields: 'name,email'},  function(response){
+            console.log(response);
             let data = {};
             data.userID = response.id;
             data.userName = response.name;
@@ -72,8 +75,10 @@ function statusChangeCallback(response){
     } //這位用戶未登入 Facebook，因此無法得知對方是否已登入您的網頁；或者之前已呼叫 FB.logout()，因此無法連結至 Facebook。
     else {
         FB.login(function(response) {
+            console.log(response);
             if (response.status === 'connected') {
                 FB.api("/me?fields=id,name,email", function(response){
+                    console.log(response);
                     let data = {};
                     data.userID = response.id;
                     data.userName = response.name;
@@ -92,7 +97,9 @@ function statusChangeCallback(response){
                     request.send(data_to_python);
                 })
             } else if (response.status === "not_authorized"){
-                FB.api("/me?fields=id,name,email", function(response){
+                console.log(response);
+                FB.api("/me?fields=id,name,email", {fields: 'name,email'},  function(response){
+                    console.log(response);
                     let data = {};
                     data.userID = response.id;
                     data.userName = response.name;
@@ -111,7 +118,7 @@ function statusChangeCallback(response){
                     request.send(data_to_python);
                 })
             }
-        });
+        }, {scope: 'public_profile,email'});
     }
 }
 
