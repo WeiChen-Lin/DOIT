@@ -30,7 +30,7 @@ function statusChangeCallback(response){
         FB.login(function(response){
             console.log(response);
             if(response.status === "connected"){
-                FB.api("/me?fields=id,name,email", {fields: 'name,email'} , function(response){
+                FB.api("/me?fields=id,name,email", function(response){
                     console.log(response);
                     let data = {};
                     data.userID = response.id;
@@ -50,7 +50,7 @@ function statusChangeCallback(response){
                     request.send(data_to_python);
                 })
             }
-        })
+        }, {scope: 'public_profile,email'});
     } //這位用戶已登入 Facebook，且已登入您的網頁。
     else if (response.status === "connected"){
         FB.api("/me?fields=id,name,email", {fields: 'name,email'},  function(response){
@@ -77,7 +77,7 @@ function statusChangeCallback(response){
         FB.login(function(response) {
             console.log(response);
             if (response.status === 'connected') {
-                FB.api("/me?fields=id,name,email", {fields: 'name,email'},  function(response){
+                FB.api("/me?fields=id,name,email", function(response){
                     console.log(response);
                     let data = {};
                     data.userID = response.id;
@@ -118,7 +118,7 @@ function statusChangeCallback(response){
                     request.send(data_to_python);
                 })
             }
-        });
+        }, {scope: 'public_profile,email'});
     }
 }
 
