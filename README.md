@@ -25,13 +25,11 @@
 ![系統架構圖](https://user-images.githubusercontent.com/60848391/127816439-e55aa085-b09e-4c95-b8c8-0d23f7569c24.png)
 
 ### MySQL架構圖
-
 ![mysql架構圖2](https://user-images.githubusercontent.com/60848391/127818729-4eacc077-5ca3-4f37-81af-0d44022a916c.png)
 
 ## 功能介紹
 
 ### 首頁進行帳號登入及註冊
-
 ![首頁](https://user-images.githubusercontent.com/60848391/127956269-1218844f-1466-41b0-b6fd-750ff32d4156.png)
 
 首頁可進行登入及註冊，目前支援FB實現第三方登入。
@@ -41,16 +39,16 @@
 * 密碼需輸入英文大小寫及數字共8位進行註冊
 
 ### 團隊總覽
-
 ![團隊總攬](https://user-images.githubusercontent.com/60848391/127984859-eafae573-1d6c-4154-9478-232fba83b58e.png)
 
 1. 可查看個人資料
-2. Leading team為您所帶領的團隊，可以邀請其他人加入您的團隊，並且安排工作給團隊內的工作者。
-3. Working team為您所加入的團隊，可以查看其團隊領導者指派給您的工作。
+2. Leading team為您所帶領的團隊，點擊Add Team可以建立團隊(綠色block)，點擊綠色block可以進入工作頁面，可以邀請其他人加入您的團隊，並且安排工作給團隊內的工作者。
+3. Working team為您所加入的團隊，點擊綠色block可以進入工作頁面，可以查看其團隊領導者指派給您的工作。
 
 * 點擊團隊的畫面即會進入團隊內工作頁面。
 
 ### 工作頁面
+
 
 
 
