@@ -49,6 +49,12 @@
 
 ### 工作頁面
 
+![工作區塊領導首頁](https://user-images.githubusercontent.com/60848391/127992532-95bb39d3-56a9-47da-80a0-510fa31355d1.png)
+
+#### 1. 列出所有的團隊，包含您領導的，以及你所加入的團隊
+#### 2. 團隊名稱、工作狀態篩選、邀請別人加入團隊、分派工作
+
+![分派及邀請](https://user-images.githubusercontent.com/60848391/127992957-206087f6-fe5b-4fd1-a99f-c3c711a90f84.png)
 
 
 
